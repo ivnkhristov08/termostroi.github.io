@@ -349,10 +349,17 @@ function answer(id) {
     text = "📞 0887 66 15 88<br>✉️ termostroi_sz@abv.bg<br><a href='https://www.facebook.com/share/1BzKgCxMRn/?mibextid=wwXIfr' target='_blank'>Messenger</a>";
 
   body.innerHTML = `
-    <p>${text}</p>
-    <br>
-    <button onclick="location.href='tel:0887661588'">📞 Обади се</button>
-    <button onclick="showMenu()">⬅ Назад</button>
+  <p>${text}</p>
+  <br>
+  <b>📞 Избери номер за обаждане:</b><br><br>
+
+  <button onclick="location.href='tel:0887661588'">📞 0887 66 15 88</button>
+  <button onclick="location.href='tel:0878605988'">📞 0878 60 59 88</button>
+
+  <br><br>
+  <button onclick="showMenu()">⬅ Назад</button>
+`;
+
   `;
 }
 </script>
