@@ -236,6 +236,105 @@ window.addEventListener("scroll", () => {
     });
 });
 </script>
+<!-- FAQ АСИСТЕНТ -->
+<div id="faq-bot">
+  💬
+</div>
+
+<div id="faq-window">
+  <div class="faq-header">
+    ❄️ Асистент Термострой
+    <span onclick="toggleFAQ()">✖</span>
+  </div>
+  <div class="faq-body" id="faq-body">
+    <p><b>Здравейте! С какво можем да помогнем?</b></p>
+    <button onclick="answer(1)">Какви услуги предлагате?</button>
+    <button onclick="answer(2)">Работите ли с абонамент?</button>
+    <button onclick="answer(3)">За какви обекти?</button>
+    <button onclick="answer(4)">Колко бързо реагирате?</button>
+    <button onclick="answer(5)">Контакти</button>
+  </div>
+</div>
+
+<style>
+#faq-bot {
+  position: fixed;
+  bottom: 150px;
+  right: 20px;
+  background: #0084ff;
+  color: #fff;
+  font-size: 26px;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#faq-window {
+  position: fixed;
+  bottom: 200px;
+  right: 20px;
+  width: 300px;
+  background: #ffffff;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  display: none;
+  z-index: 1000;
+}
+
+.faq-header {
+  background: #08315c;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq-body {
+  padding: 15px;
+}
+
+.faq-body button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  border: none;
+  background: #0b3c6f;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+const faqBot = document.getElementById("faq-bot");
+const faqWindow = document.getElementById("faq-window");
+faqBot.onclick = toggleFAQ;
+
+function toggleFAQ() {
+  faqWindow.style.display = faqWindow.style.display === "block" ? "none" : "block";
+}
+
+function answer(id) {
+  const body = document.getElementById("faq-body");
+  let text = "";
+
+  if (id === 1)
+    text = "Предлагаме сервиз, поддръжка, диагностика и изграждане на хладилни камери и системи.";
+  if (id === 2)
+    text = "Да, предлагаме абонаментна поддръжка за магазини, заведения и производствени бази.";
+  if (id === 3)
+    text = "Работим с магазини, заведения, складове, производствени бази и частни клиенти.";
+  if (id === 4)
+    text = "Реагираме бързо при аварии и работим с приоритет за редовни клиенти.";
+  if (id === 5)
+    text = "📞 0887 66 15 88<br>✉️ termostroi_sz@abv.bg<br><a href='https://www.facebook.com/share/1BzKgCxMRn/?mibextid=wwXIfr' target='_blank'>Messenger</a>";
+
+  body.innerHTML = `<p>${text}</p><br><button onclick="location.href='tel:0887661588'">📞 Обади се</button>`;
+}
+</script>
 
 </body>
 </html>
