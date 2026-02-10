@@ -317,6 +317,18 @@ function toggleFAQ() {
   faqWindow.style.display = faqWindow.style.display === "block" ? "none" : "block";
 }
 
+function showMenu() {
+  const body = document.getElementById("faq-body");
+  body.innerHTML = `
+    <p><b>С какво можем да помогнем?</b></p>
+    <button onclick="answer(1)">Какви услуги предлагате?</button>
+    <button onclick="answer(2)">Работите ли с абонамент?</button>
+    <button onclick="answer(3)">За какви обекти?</button>
+    <button onclick="answer(4)">Колко бързо реагирате?</button>
+    <button onclick="answer(5)">Контакти</button>
+  `;
+}
+
 function answer(id) {
   const body = document.getElementById("faq-body");
   let text = "";
@@ -332,7 +344,12 @@ function answer(id) {
   if (id === 5)
     text = "📞 0887 66 15 88<br>✉️ termostroi_sz@abv.bg<br><a href='https://www.facebook.com/share/1BzKgCxMRn/?mibextid=wwXIfr' target='_blank'>Messenger</a>";
 
-  body.innerHTML = `<p>${text}</p><br><button onclick="location.href='tel:0887661588'">📞 Обади се</button>`;
+  body.innerHTML = `
+    <p>${text}</p>
+    <br>
+    <button onclick="location.href='tel:0887661588'">📞 Обади се</button>
+    <button onclick="showMenu()">⬅ Назад</button>
+  `;
 }
 </script>
 
