@@ -271,7 +271,8 @@ window.addEventListener("scroll", () => {
   padding: 15px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 9999;
+  pointer-events: auto;
 }
 
 #faq-window {
@@ -284,8 +285,9 @@ window.addEventListener("scroll", () => {
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
   display: none;
-  z-index: 1000;
+  z-index: 9999;
 }
+
 
 .faq-header {
   background: #08315c;
@@ -349,15 +351,16 @@ function answer(id) {
     text = "📞 0887 66 15 88<br>✉️ termostroi_sz@abv.bg<br><a href='https://www.facebook.com/share/1BzKgCxMRn/?mibextid=wwXIfr' target='_blank'>Messenger</a>";
 
   body.innerHTML = `
-  <p>${text}</p>
-  <br>
-  <b>📞 Избери номер за обаждане:</b><br><br>
+    <p>${text}</p>
+    <br>
+    <b>📞 Избери номер за обаждане:</b><br><br>
 
-  <button onclick="location.href='tel:0887661588'">📞 0887 66 15 88</button>
-  <button onclick="location.href='tel:0878605988'">📞 0878 60 59 88</button>
+    <button onclick="location.href='tel:0887661588'">📞 0887 66 15 88</button>
+    <button onclick="location.href='tel:0878605988'">📞 0878 60 59 88</button>
 
-  <br><br>
-  <button onclick="showMenu()">⬅ Назад</button>
+    <br><br>
+    <button onclick="showMenu()">⬅ Назад</button>
+  `;
 }
 </script>
 
